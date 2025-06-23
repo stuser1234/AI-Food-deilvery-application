@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taste Profile - AI Food Delivery</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="page-container">
+        <!-- Header -->
+        <header class="page-header">
+            <a href="index.html" class="back-button">
+                <i class="fas fa-arrow-left"></i>
+            </a>
+            <h1>Taste Profile</h1>
+        </header>
+
+        <!-- Main Content -->
+        <main class="page-content">
+            <section class="taste-profile">
+                <div class="profile-intro">
+                    <h2>Discover Your Food Preferences</h2>
+                    <p>Let our AI analyze your taste preferences and create a personalized food profile</p>
+                </div>
+
+                <div class="preference-inputs">
+                    <div class="preference-group">
+                        <label for="spiciness">Spiciness Level</label>
+                        <input type="range" id="spiciness" min="0" max="10" value="5">
+                        <div class="range-labels">
+                            <span>Mild</span>
+                            <span>Medium</span>
+                            <span>Hot</span>
+                        </div>
+                    </div>
+
+                    <div class="preference-group">
+                        <label for="sweetness">Sweetness Preference</label>
+                        <input type="range" id="sweetness" min="0" max="10" value="5">
+                        <div class="range-labels">
+                            <span>Not Sweet</span>
+                            <span>Moderate</span>
+                            <span>Very Sweet</span>
+                        </div>
+                    </div>
+
+                    <div class="preference-group">
+                        <label for="cuisine">Favorite Cuisines</label>
+                        <select id="cuisine" multiple>
+                            <option value="italian">Italian</option>
+                            <option value="chinese">Chinese</option>
+                            <option value="indian">Indian</option>
+                            <option value="mexican">Mexican</option>
+                            <option value="japanese">Japanese</option>
+                            <option value="thai">Thai</option>
+                        </select>
+                    </div>
+
+                    <div class="preference-group">
+                        <label for="dietary">Dietary Preferences</label>
+                        <select id="dietary" multiple>
+                            <option value="vegetarian">Vegetarian</option>
+                            <option value="vegan">Vegan</option>
+                            <option value="gluten-free">Gluten-Free</option>
+                            <option value="halal">Halal</option>
+                            <option value="kosher">Kosher</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button class="generate-profile-btn">
+                    Generate My Taste Profile
+                </button>
+
+                <div class="profile-results" style="display: none;">
+                    <h3>Your Taste Profile</h3>
+                    <div class="profile-visualization">
+                        <!-- Profile visualization will be added here -->
+                    </div>
+                    <div class="recommendations">
+                        <h4>Recommended Dishes</h4>
+                        <div class="recommendation-grid">
+                            <!-- Recommendations will be added here -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/taste-profile.js"></script>
+</body>
+</html> 

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood Food - AI Food Delivery</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="page-container">
+        <!-- Header -->
+        <header class="page-header">
+            <a href="index.html" class="back-button">
+                <i class="fas fa-arrow-left"></i>
+            </a>
+            <h1>Mood Food</h1>
+        </header>
+
+        <!-- Main Content -->
+        <main class="page-content">
+            <section class="mood-food">
+                <div class="mood-intro">
+                    <h2>What's Your Mood Today?</h2>
+                    <p>Select your mood and let our AI suggest the perfect food to match it</p>
+                </div>
+
+                <div class="mood-selector">
+                    <div class="mood-option" data-mood="happy">
+                        <i class="fas fa-smile"></i>
+                        <span>Happy</span>
+                    </div>
+                    <div class="mood-option" data-mood="sad">
+                        <i class="fas fa-frown"></i>
+                        <span>Sad</span>
+                    </div>
+                    <div class="mood-option" data-mood="stressed">
+                        <i class="fas fa-tired"></i>
+                        <span>Stressed</span>
+                    </div>
+                    <div class="mood-option" data-mood="energetic">
+                        <i class="fas fa-bolt"></i>
+                        <span>Energetic</span>
+                    </div>
+                    <div class="mood-option" data-mood="relaxed">
+                        <i class="fas fa-spa"></i>
+                        <span>Relaxed</span>
+                    </div>
+                    <div class="mood-option" data-mood="adventurous">
+                        <i class="fas fa-mountain"></i>
+                        <span>Adventurous</span>
+                    </div>
+                </div>
+
+                <div class="mood-details" style="display: none;">
+                    <h3>Tell us more about your mood</h3>
+                    <div class="mood-description">
+                        <textarea placeholder="Describe how you're feeling..."></textarea>
+                    </div>
+                    <div class="mood-preferences">
+                        <label>Any specific cravings?</label>
+                        <div class="cravings-grid">
+                            <div class="craving-option" data-craving="sweet">
+                                <i class="fas fa-cookie"></i>
+                                <span>Sweet</span>
+                            </div>
+                            <div class="craving-option" data-craving="savory">
+                                <i class="fas fa-bacon"></i>
+                                <span>Savory</span>
+                            </div>
+                            <div class="craving-option" data-craving="spicy">
+                                <i class="fas fa-pepper-hot"></i>
+                                <span>Spicy</span>
+                            </div>
+                            <div class="craving-option" data-craving="comfort">
+                                <i class="fas fa-utensils"></i>
+                                <span>Comfort Food</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="find-food-btn" style="display: none;">
+                    Find My Mood Food
+                </button>
+
+                <div class="mood-results" style="display: none;">
+                    <h3>Food Recommendations for Your Mood</h3>
+                    <div class="recommendation-grid">
+                        <!-- Recommendations will be added here -->
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/mood-food.js"></script>
+</body>
+</html> 
