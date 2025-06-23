@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Food Delivery - 3D Experience</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/cuisine-dialog.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.7.1/dist/gsap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- 3D Scene Container -->
+    <div id="scene-container"></div>
+
+    <!-- Background Images -->
+    <div class="background-images">
+        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1920&h=1080&fit=crop" alt="Background" class="bg-image active" loading="eager">
+        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=1920&h=1080&fit=crop" alt="Background" class="bg-image" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=1920&h=1080&fit=crop" alt="Background" class="bg-image" loading="lazy">
+    </div>
+
+    <!-- UI Elements -->
+    <div class="ui-container">
+        <!-- Navigation Bar -->
+        <nav class="navbar">
+            <div class="logo">
+                <i class="fas fa-robot"></i>
+                <h1>AI Food Delivery</h1>
+            </div>
+            <div class="nav-links">
+                <a href="#" class="active">Home</a>
+                <a href="pages/restaurants.html">Restaurants</a>
+                <a href="pages/offers.html">Offers</a>
+                <a href="pages/cart.html" class="cart-link">Cart <span class="cart-count">0</span></a>
+                <div class="ai-services-dropdown">
+                    <a href="#" class="ai-services-link">AI Services <i class="fas fa-chevron-down"></i></a>
+                    <div class="ai-services-menu">
+                        <a href="ai-features/ai-assistant.html">AI Food Assistant</a>
+                        <a href="ai-features/menu-generator.html">AI Menu Generator</a>
+                        <a href="ai-features/diet-planner.html">AI Diet Planner</a>
+                        <a href="ai-features/taste-profile.html">Taste Profile</a>
+                        <a href="ai-features/mood-food.html">Mood Food</a>
+                        <a href="ai-features/food-pairing.html">Food Pairing</a>
+                    </div>
+                </div>
+            </div>
+            <div class="user-actions">
+                <button class="login-btn">Login</button>
+                <button class="signup-btn">Sign Up</button>
+            </div>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>AI-Powered Food Delivery</h1>
+                <p>Experience the future of food delivery with our AI-driven platform. Get personalized recommendations, real-time tracking, and instant support.</p>
+                <div class="hero-features">
+                    <div class="feature">
+                        <i class="fas fa-robot"></i>
+                        <span>AI Assistant</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-leaf"></i>
+                        <span>Eco-Friendly</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-bolt"></i>
+                        <span>Fast Delivery</span>
+                    </div>
+                    <div class="feature">
+                        <i class="fas fa-utensils"></i>
+                        <span>Smart Menu</span>
+                    </div>
+                </div>
+                <div class="search-container">
+                    <input type="text" placeholder="What are you craving?">
+                    <button class="search-btn">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Left Column - Food Content -->
+        <div class="food-content">
+            <!-- Categories Section -->
+            <section class="categories">
+                <h2>Explore Our Cuisines</h2>
+                <div class="category-grid">
+                    <div class="category-card" data-category="pizza">
+                        <div class="category-image">
+                            <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&h=300&fit=crop" alt="Pizza" loading="lazy">
+                        </div>
+                        <div class="category-icon">
+                            <i class="fas fa-pizza-slice"></i>
+                        </div>
+                        <h3>Italian</h3>
+                        <p>Pizza, Pasta, Risotto</p>
+                    </div>
+                    <div class="category-card" data-category="burger">
+                        <div class="category-image">
+                            <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&h=300&fit=crop" alt="Burger" loading="lazy">
+                        </div>
+                        <div class="category-icon">
+                            <i class="fas fa-hamburger"></i>
+                        </div>
+                        <h3>American</h3>
+                        <p>Burgers, Steaks, BBQ</p>
+                    </div>
+                    <div class="category-card" data-category="sushi">
+                        <div class="category-image">
+                            <img src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=400&h=300&fit=crop" alt="Sushi" loading="lazy">
+                        </div>
+                        <div class="category-icon">
+                            <i class="fas fa-fish"></i>
+                        </div>
+                        <h3>Japanese</h3>
+                        <p>Sushi, Ramen, Tempura</p>
+                    </div>
+                    <div class="category-card" data-category="indian">
+                        <div class="category-image">
+                            <img src="https://images.pexels.com/photos/2474661/pexels-photo-2474661.jpeg" alt="Indian Cuisine" loading="lazy">
+                        </div>
+                        <div class="category-icon">
+                            <i class="fas fa-pepper-hot"></i>
+                        </div>
+                        <h3>Indian</h3>
+                        <p>Curry, Biryani, Tandoori</p>
+                    </div>
+                    <div class="category-card" data-category="thai">
+                        <div class="category-image">
+                            <img src="https://images.unsplash.com/photo-1522771930-78848d9293e8?w=400&h=300&fit=crop" alt="Thai" loading="lazy">
+                        </div>
+                        <div class="category-icon">
+                            <i class="fas fa-bowl-food"></i>
+                        </div>
+                        <h3>Thai</h3>
+                        <p>Pad Thai, Green Curry, Tom Yum</p>
+                    </div>
+                    <div class="category-card" data-category="mexican">
+                        <div class="category-image">
+                            <img src="https://images.unsplash.com/photo-1513456852971-30c0b8199d4d?w=400&h=300&fit=crop" alt="Mexican" loading="lazy">
+                        </div>
+                        <div class="category-icon">
+                            <i class="fas fa-pepper-hot"></i>
+                        </div>
+                        <h3>Mexican</h3>
+                        <p>Tacos, Burritos, Quesadillas</p>
+                    </div>
+                    <div class="category-card" data-category="chinese">
+                        <div class="category-image">
+                            <img src="https://images.pexels.com/photos/1731535/pexels-photo-1731535.jpeg" alt="Chinese Cuisine" loading="lazy">
+                        </div>
+                        <div class="category-icon">
+                            <i class="fas fa-drumstick-bite"></i>
+                        </div>
+                        <h3>Chinese</h3>
+                        <p>Dim Sum, Noodles, Stir Fry</p>
+                    </div>
+                    <div class="category-card" data-category="mediterranean">
+                        <div class="category-image">
+                            <img src="https://images.unsplash.com/photo-1559847844-5315695dadae?w=400&h=300&fit=crop" alt="Mediterranean" loading="lazy">
+                        </div>
+                        <div class="category-icon">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                        <h3>Mediterranean</h3>
+                        <p>Falafel, Hummus, Shawarma</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Featured Restaurants -->
+            <section class="featured-restaurants">
+                <h2>Top Rated Restaurants</h2>
+                <div class="restaurant-grid">
+                    <div class="restaurant-card">
+                        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=400&h=300&fit=crop" alt="Pizza Palace" loading="lazy">
+                        <div class="restaurant-info">
+                            <h3>Pizza Palace</h3>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.8</span>
+                            </div>
+                            <p>Italian • Pizza • Pasta</p>
+                            <div class="delivery-info">
+                                <span><i class="fas fa-clock"></i> 25-35 min</span>
+                                <span><i class="fas fa-truck"></i> Free delivery</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="restaurant-card">
+                        <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=400&h=300&fit=crop" alt="Burger King" loading="lazy">
+                        <div class="restaurant-info">
+                            <h3>Burger King</h3>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.5</span>
+                            </div>
+                            <p>American • Burgers • Fast Food</p>
+                            <div class="delivery-info">
+                                <span><i class="fas fa-clock"></i> 20-30 min</span>
+                                <span><i class="fas fa-truck"></i> Free delivery</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="restaurant-card">
+                        <img src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=400&h=300&fit=crop" alt="Sushi Master" loading="lazy">
+                        <div class="restaurant-info">
+                            <h3>Sushi Master</h3>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.9</span>
+                            </div>
+                            <p>Japanese • Sushi • Asian</p>
+                            <div class="delivery-info">
+                                <span><i class="fas fa-clock"></i> 30-40 min</span>
+                                <span><i class="fas fa-truck"></i> Free delivery</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="restaurant-card" data-cuisine="indian">
+                        <img src="https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg" alt="Spice Garden" loading="lazy">
+                        <div class="restaurant-info">
+                            <h3>Spice Garden</h3>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.8</span>
+                            </div>
+                            <p>Authentic Indian cuisine with modern twist</p>
+                            <div class="delivery-info">
+                                <span><i class="fas fa-clock"></i> 30-40 min</span>
+                                <span><i class="fas fa-rupee-sign"></i> 200 for two</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="restaurant-card">
+                        <img src="https://images.unsplash.com/photo-1522771930-78848d9293e8?w=400&h=300&fit=crop" alt="Thai Spice" loading="lazy">
+                        <div class="restaurant-info">
+                            <h3>Thai Spice</h3>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.6</span>
+                            </div>
+                            <p>Thai • Curry • Noodles</p>
+                            <div class="delivery-info">
+                                <span><i class="fas fa-clock"></i> 30-40 min</span>
+                                <span><i class="fas fa-truck"></i> Free delivery</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="restaurant-card">
+                        <img src="https://images.unsplash.com/photo-1513456852971-30c0b8199d4d?w=400&h=300&fit=crop" alt="Taco Fiesta" loading="lazy">
+                        <div class="restaurant-info">
+                            <h3>Taco Fiesta</h3>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <span>4.4</span>
+                            </div>
+                            <p>Mexican • Tacos • Burritos</p>
+                            <div class="delivery-info">
+                                <span><i class="fas fa-clock"></i> 20-30 min</span>
+                                <span><i class="fas fa-truck"></i> Free delivery</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Right Column - AI Features and Chat -->
+        <div class="ai-content">
+            <!-- AI Features Section -->
+            <section class="ai-features">
+                <h2>AI-Powered Features</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h3>AI Food Assistant</h3>
+                        <p>Get personalized food recommendations and recipe suggestions from our AI assistant.</p>
+                        <a href="ai-features/ai-assistant.html" class="feature-button">Try Now</a>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <h3>AI Menu Generator</h3>
+                        <p>Generate custom menus based on your preferences and dietary needs.</p>
+                        <a href="ai-features/menu-generator.html" class="feature-button">Try Now</a>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-dumbbell"></i>
+                        </div>
+                        <h3>AI Diet Planner</h3>
+                        <p>Get personalized diet plans based on your fitness goals and body metrics.</p>
+                        <a href="ai-features/diet-planner.html" class="feature-button">Try Now</a>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-utensil-spoon"></i>
+                        </div>
+                        <h3>Taste Profile</h3>
+                        <p>Discover your food preferences and get personalized recommendations.</p>
+                        <a href="taste-profile.html" class="feature-button">Try Now</a>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-smile"></i>
+                        </div>
+                        <h3>Mood Food</h3>
+                        <p>Find the perfect food based on your current mood and preferences.</p>
+                        <a href="mood-food.html" class="feature-button">Try Now</a>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-glass-martini-alt"></i>
+                        </div>
+                        <h3>Food Pairing</h3>
+                        <p>Discover perfect food and drink combinations for any occasion.</p>
+                        <a href="food-pairing.html" class="feature-button">Try Now</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- AI Chat Interface -->
+            <section class="ai-chat">
+                <div class="chat-header">
+                    <h3>AI Food Assistant</h3>
+                    <div class="chat-status">
+                        <span class="status-indicator"></span>
+                        <span>Online</span>
+                    </div>
+                </div>
+                <div class="chat-messages">
+                    <div class="message ai">
+                        <div class="message-content">
+                            <p>Hello! I'm your AI Food Assistant. How can I help you today?</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="chat-input">
+                    <input type="text" placeholder="Ask me anything about food...">
+                    <button><i class="fas fa-paper-plane"></i></button>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Loading Screen -->
+    <div class="loading-screen">
+        <div class="loader">
+            <div class="food-icon">
+                <i class="fas fa-utensils"></i>
+            </div>
+            <div class="loading-text">Loading AI Experience...</div>
+        </div>
+    </div>
+
+    <!-- Cuisine Dialog Box -->
+    <div class="cuisine-dialog" id="cuisineDialog">
+        <div class="dialog-content">
+            <div class="dialog-header">
+                <h2 id="dialogTitle">Cuisine Items</h2>
+                <button class="close-dialog" id="closeDialog">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="dialog-body">
+                <div class="cuisine-items" id="cuisineItems">
+                    <!-- Items will be dynamically added here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- AI Feature Dialog -->
+    <div class="ai-dialog" id="aiDialog">
+        <div class="dialog-content">
+            <div class="dialog-header">
+                <div class="feature-icon">
+                    <i class="fas" id="featureIcon"></i>
+                </div>
+                <h2 id="dialogTitle">AI Feature</h2>
+                <button class="close-dialog" id="closeDialog">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="dialog-body">
+                <div class="feature-preview">
+                    <div class="feature-visualization" id="featureVisualization">
+                        <!-- Dynamic content will be added here -->
+                    </div>
+                    <div class="feature-details">
+                        <div class="feature-description" id="featureDescription"></div>
+                        <div class="feature-examples" id="featureExamples">
+                            <h3>Example Results</h3>
+                            <div class="examples-container"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/three.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/ai.js"></script>
+    <script src="js/index.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async() => {
+            // Initialize AI service
+            await aiService.initialize();
+
+            // Update cart count
+            const cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const cartCount = document.querySelector('.cart-count');
+            if (cartCount) {
+                cartCount.textContent = cart.length;
+                cartCount.style.display = cart.length > 0 ? 'block' : 'none';
+            }
+
+            // Setup search functionality
+            const searchInput = document.querySelector('.search-container input');
+            const searchBtn = document.querySelector('.search-btn');
+
+            searchBtn.addEventListener('click', () => {
+                const query = searchInput.value.trim();
+                if (query) {
+                    window.location.href = `pages/restaurants.html?search=${encodeURIComponent(query)}`;
+                }
+            });
+
+            searchInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    const query = searchInput.value.trim();
+                    if (query) {
+                        window.location.href = `pages/restaurants.html?search=${encodeURIComponent(query)}`;
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
