@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Food Assistant - AI Food Delivery</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/ai-features.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="ai-feature-page">
+        <header class="ai-feature-header">
+            <a href="../index.html" class="back-button">
+                <i class="fas fa-arrow-left"></i> Back to Home
+            </a>
+            <h1>AI Food Assistant</h1>
+            <p>Your personal AI-powered food guide</p>
+        </header>
+
+        <main class="ai-feature-content">
+            <section class="feature-intro">
+                <div class="intro-text">
+                    <h2>Your Personal Food Guide</h2>
+                    <p>Our AI Food Assistant helps you discover new dishes, get personalized recommendations, and answer all your food-related questions in real-time.</p>
+                </div>
+                <div class="intro-image">
+                    <img src="../images/ai-assistant-hero.jpg" alt="AI Food Assistant">
+                </div>
+            </section>
+
+            <section class="chat-interface">
+                <div class="chat-container">
+                    <div class="chat-header">
+                        <div class="assistant-avatar">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="assistant-info">
+                            <h3>AI Food Assistant</h3>
+                            <p>Ready to help you discover amazing food!</p>
+                        </div>
+                    </div>
+                    <div class="chat-messages" id="chatMessages">
+                        <div class="message assistant">
+                            <div class="message-content">
+                                <p>Hello! I'm your AI Food Assistant. How can I help you today? I can recommend dishes, suggest restaurants, or answer any food-related questions you have!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chat-input">
+                        <input type="text" id="userInput" placeholder="Ask me anything about food...">
+                        <button id="sendMessage">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="feature-benefits">
+                <h2>Why Use AI Food Assistant?</h2>
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <i class="fas fa-lightbulb"></i>
+                        <h3>Smart Recommendations</h3>
+                        <p>Get personalized food suggestions based on your preferences and dietary needs</p>
+                    </div>
+                    <div class="benefit-card">
+                        <i class="fas fa-comments"></i>
+                        <h3>24/7 Support</h3>
+                        <p>Get instant answers to your food-related questions anytime</p>
+                    </div>
+                    <div class="benefit-card">
+                        <i class="fas fa-utensils"></i>
+                        <h3>Menu Insights</h3>
+                        <p>Learn about ingredients, preparation methods, and nutritional information</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="feature-demo">
+                <h2>Try It Yourself</h2>
+                <div class="demo-container">
+                    <div class="suggested-questions">
+                        <h3>Try asking me:</h3>
+                        <div class="questions-grid">
+                            <button class="question-btn">What's a good vegetarian option?</button>
+                            <button class="question-btn">Recommend a spicy dish</button>
+                            <button class="question-btn">What's in the Margherita pizza?</button>
+                            <button class="question-btn">Suggest a healthy lunch</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // Chat functionality
+        const chatMessages = document.getElementById('chatMessages');
+        const userInput = document.getElementById('userInput');
+        const sendButton = document.getElementById('sendMessage');
+        const questionButtons = document.querySelectorAll('.question-btn');
+
+        function addMessage(message, isUser = false) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${isUser ? 'user' : 'assistant'}`;
+            
+            const contentDiv = document.createElement('div');
+            contentDiv.className = 'message-content';
+            
+            const messageText = document.createElement('p');
+            messageText.textContent = message;
+            
+            contentDiv.appendChild(messageText);
+            messageDiv.appendChild(contentDiv);
+            chatMessages.appendChild(messageDiv);
+            
+            // Scroll to bottom
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+
+        function handleUserInput() {
+            const message = userInput.value.trim();
+            if (message) {
+                addMessage(message, true);
+                userInput.value = '';
+                
+                // Simulate AI response
+                setTimeout(() => {
+                    addMessage("I'm analyzing your request... Here's what I found!");
+                }, 1000);
+            }
+        }
+
+        sendButton.addEventListener('click', handleUserInput);
+        userInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                handleUserInput();
+            }
+        });
+
+        questionButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                userInput.value = button.textContent;
+                handleUserInput();
+            });
+        });
+    </script>
+</body>
+</html> 

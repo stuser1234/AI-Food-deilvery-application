@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background Circle -->
+    <circle cx="100" cy="100" r="90" fill="#FF6B6B"/>
+    
+    <!-- Utensils Icon -->
+    <path d="M70 60 L70 140 M60 70 L80 70 M60 130 L80 130" stroke="white" stroke-width="8" stroke-linecap="round"/>
+    
+    <!-- Fork -->
+    <path d="M100 50 L100 150 M90 60 L110 60 M90 80 L110 80 M90 100 L110 100" stroke="white" stroke-width="8" stroke-linecap="round"/>
+    
+    <!-- Knife -->
+    <path d="M130 50 L130 150 M120 60 L140 60 M120 80 L140 80 M120 100 L140 100" stroke="white" stroke-width="8" stroke-linecap="round"/>
+    
+    <!-- AI Text -->
+    <text x="100" y="180" font-family="Arial" font-size="24" fill="white" text-anchor="middle">AI</text>
+</svg> 

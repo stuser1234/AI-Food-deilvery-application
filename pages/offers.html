@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offers - AI Food Delivery</title>
+    <link rel="stylesheet" href="../css/offers.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fas fa-robot"></i>
+            <h1>AI Food Delivery</h1>
+        </div>
+        <div class="nav-links">
+            <a href="../index.html">Home</a>
+            <a href="restaurants.html">Restaurants</a>
+            <a href="offers.html" class="active">Offers</a>
+            <a href="cart.html">Cart</a>
+        </div>
+        <div class="user-actions">
+            <button class="login-btn">Login</button>
+            <button class="signup-btn">Sign Up</button>
+        </div>
+        <button class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+        </button>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="offers-container">
+        <!-- Featured Offers -->
+        <section class="featured-offers">
+            <h2>Featured Offers</h2>
+            <div class="offer-slider">
+                <div class="offer-card featured">
+                    <div class="offer-image">
+                        <img src="../images/weekend-special.jpg" alt="Special Offer" loading="lazy">
+                        <div class="offer-tag">50% OFF</div>
+                    </div>
+                    <div class="offer-content">
+                        <h3>Weekend Special</h3>
+                        <p>Get 50% off on all orders above $30</p>
+                        <div class="offer-details">
+                            <span class="valid-until">Valid until: Dec 31, 2023</span>
+                            <button class="apply-btn">Apply Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Restaurant Offers -->
+        <section class="restaurant-offers">
+            <h2>Restaurant Offers</h2>
+            <div class="offer-grid">
+                <div class="offer-card">
+                    <div class="offer-image">
+                        <img src="../images/burger-king-offer.jpg" alt="Burger King Offer" loading="lazy">
+                        <div class="offer-tag">30% OFF</div>
+                    </div>
+                    <div class="offer-content">
+                        <h3>Burger King</h3>
+                        <p>30% off on all burgers</p>
+                        <div class="offer-details">
+                            <span class="valid-until">Valid until: Dec 15, 2023</span>
+                            <button class="apply-btn">Apply Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="offer-card">
+                    <div class="offer-image">
+                        <img src="../images/sushi-master.jpg" alt="Sushi Master Offer" loading="lazy">
+                        <div class="offer-tag">BUY 1 GET 1</div>
+                    </div>
+                    <div class="offer-content">
+                        <h3>Sushi Master</h3>
+                        <p>Buy 1 get 1 free on selected rolls</p>
+                        <div class="offer-details">
+                            <span class="valid-until">Valid until: Dec 20, 2023</span>
+                            <button class="apply-btn">Apply Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="offer-card">
+                    <div class="offer-image">
+                        <img src="../images/spice-garden.jpg" alt="Spice Garden Offer" loading="lazy">
+                        <div class="offer-tag">FREE DELIVERY</div>
+                    </div>
+                    <div class="offer-content">
+                        <h3>Spice Garden</h3>
+                        <p>Free delivery on all orders</p>
+                        <div class="offer-details">
+                            <span class="valid-until">Valid until: Dec 25, 2023</span>
+                            <button class="apply-btn">Apply Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Promo Codes -->
+        <section class="promo-codes">
+            <h2>Promo Codes</h2>
+            <div class="promo-grid">
+                <div class="promo-card">
+                    <div class="promo-code">WELCOME50</div>
+                    <div class="promo-details">
+                        <h3>Welcome Offer</h3>
+                        <p>50% off on first order</p>
+                        <button class="copy-btn">Copy Code</button>
+                    </div>
+                </div>
+
+                <div class="promo-card">
+                    <div class="promo-code">FREESHIP</div>
+                    <div class="promo-details">
+                        <h3>Free Shipping</h3>
+                        <p>Free delivery on all orders</p>
+                        <button class="copy-btn">Copy Code</button>
+                    </div>
+                </div>
+
+                <div class="promo-card">
+                    <div class="promo-code">FESTIVE30</div>
+                    <div class="promo-details">
+                        <h3>Festive Special</h3>
+                        <p>30% off on all orders</p>
+                        <button class="copy-btn">Copy Code</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../js/offers.js"></script>
+</body>
+</html> 

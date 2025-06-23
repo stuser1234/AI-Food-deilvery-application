@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart - AI Food Delivery</title>
+    <link rel="stylesheet" href="../css/cart.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fas fa-robot"></i>
+            <span>AI Food Delivery</span>
+        </div>
+        <div class="nav-links">
+            <a href="../index.html">Home</a>
+            <a href="restaurants.html">Restaurants</a>
+            <a href="offers.html">Offers</a>
+            <a href="cart.html" class="active cart-link">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count">0</span>
+            </a>
+        </div>
+        <div class="user-actions">
+            <button class="login-btn">Login</button>
+            <button class="signup-btn">Sign Up</button>
+        </div>
+        <button class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+        </button>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="cart-container">
+        <!-- Cart Items -->
+        <section class="cart-items">
+            <h2>Your Cart</h2>
+            <div class="items-list">
+                <!-- Cart items will be dynamically added here -->
+            </div>
+        </section>
+
+        <!-- Order Summary -->
+        <section class="order-summary">
+            <h2>Order Summary</h2>
+            <div class="summary-details">
+                <!-- Order summary will be dynamically added here -->
+            </div>
+
+            <!-- Promo Code -->
+            <div class="promo-section">
+                <input type="text" placeholder="Enter promo code">
+                <button class="apply-promo-btn">Apply</button>
+            </div>
+
+            <!-- Delivery Options -->
+            <div class="delivery-options">
+                <h3>Delivery Options</h3>
+                <div class="option">
+                    <input type="radio" name="delivery" id="standard" checked>
+                    <label for="standard">
+                        <span class="option-name">Standard Delivery</span>
+                        <span class="option-time">30-45 min</span>
+                    </label>
+                </div>
+                <div class="option">
+                    <input type="radio" name="delivery" id="express">
+                    <label for="express">
+                        <span class="option-name">Express Delivery</span>
+                        <span class="option-time">15-20 min</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Checkout Button -->
+            <button class="checkout-btn">Proceed to Checkout</button>
+        </section>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../js/common.js"></script>
+    <script src="../js/ai.js"></script>
+    <script src="../js/cart.js"></script>
+</body>
+</html> 

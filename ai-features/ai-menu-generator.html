@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Menu Generator - AI Food Delivery</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/ai-features.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="ai-feature-page">
+        <header class="ai-feature-header">
+            <a href="../index.html" class="back-button">
+                <i class="fas fa-arrow-left"></i> Back to Home
+            </a>
+            <h1>AI Menu Generator</h1>
+            <p>Create personalized menus with AI</p>
+        </header>
+
+        <main class="ai-feature-content">
+            <section class="feature-intro">
+                <div class="intro-text">
+                    <h2>Generate Perfect Menus</h2>
+                    <p>Our AI Menu Generator creates customized menus based on your preferences, dietary restrictions, and available ingredients. Get inspired with unique dish combinations and cooking ideas!</p>
+                </div>
+                <div class="intro-image">
+                    <img src="../images/menu-generator-hero.jpg" alt="AI Menu Generator">
+                </div>
+            </section>
+
+            <section class="menu-generator">
+                <div class="generator-container">
+                    <div class="generator-form">
+                        <h3>Create Your Menu</h3>
+                        <div class="form-group">
+                            <label for="cuisine">Cuisine Type</label>
+                            <select id="cuisine">
+                                <option value="any">Any Cuisine</option>
+                                <option value="italian">Italian</option>
+                                <option value="indian">Indian</option>
+                                <option value="chinese">Chinese</option>
+                                <option value="mexican">Mexican</option>
+                                <option value="japanese">Japanese</option>
+                            </select>
+                        </div>          
+                        <div class="form-group">
+                            <label for="dietary">Dietary Preferences</label>
+                            <div class="checkbox-group">
+                                <label>
+                                    <input type="checkbox" value="vegetarian"> Vegetarian
+                                </label>
+                                <label>
+                                    <input type="checkbox" value="vegan"> Vegan
+                                </label>
+                                <label>
+                                    <input type="checkbox" value="gluten-free"> Gluten-Free
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="ingredients">Available Ingredients (comma separated)</label>
+                            <textarea id="ingredients" placeholder="e.g., chicken, rice, tomatoes, garlic"></textarea>
+                        </div>
+                        <button class="generate-btn">
+                            <i class="fas fa-magic"></i> Generate Menu
+                        </button>
+                    </div>
+                    <div class="generator-results">
+                        <h3>Generated Menu</h3>
+                        <div class="menu-preview">
+                            <div class="menu-item">
+                                <div class="menu-item-header">
+                                    <h4>Starter</h4>
+                                    <span class="menu-time">15 min</span>
+                                </div>
+                                <p class="menu-description">Click "Generate Menu" to create your personalized menu</p>
+                            </div>
+                            <div class="menu-item">
+                                <div class="menu-item-header">
+                                    <h4>Main Course</h4>
+                                    <span class="menu-time">30 min</span>
+                                </div>
+                                <p class="menu-description">Your AI-generated dishes will appear here</p>
+                            </div>
+                            <div class="menu-item">
+                                <div class="menu-item-header">
+                                    <h4>Dessert</h4>
+                                    <span class="menu-time">20 min</span>
+                                </div>
+                                <p class="menu-description">Get ready for some delicious suggestions!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="feature-benefits">
+                <h2>Why Use AI Menu Generator?</h2>
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <i class="fas fa-lightbulb"></i>
+                        <h3>Creative Inspiration</h3>
+                        <p>Discover new dish combinations and cooking ideas</p>
+                    </div>
+                    <div class="benefit-card">
+                        <i class="fas fa-clock"></i>
+                        <h3>Time Saver</h3>
+                        <p>Quickly generate menus based on your preferences</p>
+                    </div>
+                    <div class="benefit-card">
+                        <i class="fas fa-utensils"></i>
+                        <h3>Personalized</h3>
+                        <p>Get menus tailored to your dietary needs and available ingredients</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // Menu Generator functionality
+        const generateBtn = document.querySelector('.generate-btn');
+        const menuItems = document.querySelectorAll('.menu-item');
+
+        generateBtn.addEventListener('click', () => {
+            // Simulate loading
+            menuItems.forEach(item => {
+                const description = item.querySelector('.menu-description');
+                description.textContent = 'Generating...';
+            });
+
+            // Simulate AI generation after a delay
+            setTimeout(() => {
+                menuItems[0].querySelector('.menu-description').textContent = 'Fresh Caprese Salad with Balsamic Glaze';
+                menuItems[1].querySelector('.menu-description').textContent = 'Homemade Margherita Pizza with Fresh Basil';
+                menuItems[2].querySelector('.menu-description').textContent = 'Classic Tiramisu with Coffee Liqueur';
+            }, 2000);
+        });
+    </script>
+</body>
+</html> 
