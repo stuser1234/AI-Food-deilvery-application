@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Pairing - AI Food Delivery</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="page-container">
+        <!-- Header -->
+        <header class="page-header">
+            <a href="index.html" class="back-button">
+                <i class="fas fa-arrow-left"></i>
+            </a>
+            <h1>Food Pairing</h1>
+        </header>
+
+        <!-- Main Content -->
+        <main class="page-content">
+            <section class="food-pairing">
+                <div class="pairing-intro">
+                    <h2>Perfect Food & Drink Combinations</h2>
+                    <p>Discover the ideal pairings for your favorite dishes</p>
+                </div>
+
+                <div class="pairing-search">
+                    <div class="search-input">
+                        <input type="text" placeholder="Search for a dish or ingredient...">
+                        <button class="search-btn">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="quick-suggestions">
+                    <h3>Popular Pairings</h3>
+                    <div class="suggestion-grid">
+                        <div class="suggestion-card" data-dish="pizza">
+                            <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=400&h=300&fit=crop" alt="Pizza">
+                            <div class="suggestion-info">
+                                <h4>Pizza</h4>
+                                <p>Perfect with: Red Wine, Beer</p>
+                            </div>
+                        </div>
+                        <div class="suggestion-card" data-dish="sushi">
+                            <img src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=400&h=300&fit=crop" alt="Sushi">
+                            <div class="suggestion-info">
+                                <h4>Sushi</h4>
+                                <p>Perfect with: Sake, Green Tea</p>
+                            </div>
+                        </div>
+                        <div class="suggestion-card" data-dish="steak">
+                            <img src="https://images.unsplash.com/photo-1558030006-450675393462?w=400&h=300&fit=crop" alt="Steak">
+                            <div class="suggestion-info">
+                                <h4>Steak</h4>
+                                <p>Perfect with: Red Wine, Whiskey</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pairing-results" style="display: none;">
+                    <h3>Recommended Pairings</h3>
+                    <div class="pairing-grid">
+                        <!-- Pairing results will be added here -->
+                    </div>
+                </div>
+
+                <div class="pairing-details" style="display: none;">
+                    <div class="dish-info">
+                        <h3>Dish Details</h3>
+                        <div class="dish-description">
+                            <!-- Dish details will be added here -->
+                        </div>
+                    </div>
+                    <div class="pairing-suggestions">
+                        <h3>Perfect Pairings</h3>
+                        <div class="suggestions-list">
+                            <!-- Pairing suggestions will be added here -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="js/food-pairing.js"></script>
+</body>
+</html> 
